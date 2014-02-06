@@ -3,7 +3,21 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+	$(".clickFriend").click(projectClick);
 })
+
+
+function projectClick(e) {
+    // prevent the page from reloading      
+    e.preventDefault();
+    console.log("I heard it");
+    // In an event handler, $(this) refers to      
+    // the object that triggered the event    
+    var text1 = $(this).text();
+    console.log("Text is: " + text1);
+    var text2 = anagrammedName(text1);
+    $(this).text(text2);
+}
 
 /*
  * Function that is called when the document is ready.
